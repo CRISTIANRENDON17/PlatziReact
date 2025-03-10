@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Card from "./componentes/Card.jsx";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const items = ["React", "JavaScript", "Vite"];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <section>
+      <h1>¡Hola Mundo!</h1>
+      <Card title="Card 1" description="Esta es una descripción 1" />
+      <Card title="Card 2" description="Esta es otra descripción 2 " />
+      <Card title="Card 3" description="Esta es otra descripción 3" />
+      <ul>
+        {
+          items.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))
+        }
+      </ul>
+    </section>
+  );
 }
 
 export default App
